@@ -1,0 +1,15 @@
+Linux basics
+Book: Beginning the Linux Command line: https://learning.oreilly.com/library/view/beginning-the-linux/9781430268291/
+Video: Linux Fundamentals: https://learning.oreilly.com/videos/linux-fundamentals-2nd/9780137929313/
+Live course: Linux Fundamentals Bootcamp: November 1st and 2nd
+
+RHCSA:
+Book: RHCSA Cert Guide: https://learning.oreilly.com/library/view/red-hat-rhcsa/9780138096311/
+Video: RHCSA RHEL 9: https://learning.oreilly.com/videos/-/9780137931521/
+Live course: RHCSA Crash Course: Nov. 6-9th
+
+Linux+
+Video: https://learning.oreilly.com/videos/comptia-linux-xk0-005/9780137903726/
+
+LFCS:
+Video: https://learning.oreilly.com/videos/linux-foundation-certified/9780138230678/
