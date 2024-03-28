@@ -1,0 +1,115 @@
+[root@localhost ~]# history
+    1  cd examlabs/
+    2  ./countdown 10
+    3  dnf install -y git
+    4  git clone https://github.com/sandervanvugt/certlabs
+    5  git clone https://github.com/sandervanvugt/examlabs
+    6  cd examlabs/
+    7  ls
+    8  git pull
+    9  history
+   10  ./countdown 3
+   11  man find
+   12  find / -name | wc -l
+   13  find / -name * | wc -l
+   14  find / -name "*" | wc -l
+   15  find / -links +1 
+   16  find / -links +1 -exec -il {} \;
+   17  find / -links +1 -exec ls -il {} \;
+   18  find / -type f -links +1 -exec ls -il {} \;
+   19  find / -type f -links +1 -exec ls -il {} \; | awk '{ print $1 }'
+   20  find / -type f -links +1 -exec ls -il {} \; | awk '{ print $1 }' | uniq 
+   21  find / -type f -links +1 -exec ls -il {} \; | awk '{ print $1 }' | uniq | wc -l
+   22  ./countdown 10
+   23  groupadd support
+   24  for i in linda lisa anna; do useradd -G support $i; done
+   25  cat /etc/passwd
+   26  grep support /etc/group
+   27  visudo
+   28  which useradd
+   29  ls -l /
+   30  ./countdown 12
+   31  ldd $(which login)
+   32  man -k pam
+   33  man pam_pwquality
+   34  cd /etc/pam.d/
+   35  ls
+   36  vim login 
+   37  vim system-auth 
+   38  cd /etc/security/
+   39  ls
+   40  vim pwquality.conf
+   41  cd
+   42  dd if=/dev/zero of=/disk.img bs=1M count=4096
+   43  losetup /disk.img
+   44  losetup --help
+   45  losetup -fP /disk.img 
+   46  losetup -a
+   47  fdisk /dev/loop0
+   48  history
+   49  poweroff
+   50  lsblk
+   51  history | grep files
+   52  vim /etc/fstab
+   53  reboot
+   54  touch hh
+   55  mount -o remount,rw /
+   56  cat /etc/fstab
+   57  blkid
+   58  vim /etc/fstab
+   59  vim /etc/fstab
+   60  reboot
+   61  lsblk
+   62  cat /etc/os-release 
+   63  df -h
+   64  lvs
+   65  vgs
+   66  vgextend vgfiles /dev/sdb3
+   67  vgs
+   68  lvextend -r -l +100%FREE /dev/vgfiles/lvfiles
+   69  df -h
+   70  history
+   71  mkdir -p /data/support
+   72  chgrp support /data/support
+   73  ls -ld /data/support/
+   74  chmod g+w /data/support
+   75  useradd -G support lori
+   76  chown lori /data/support/
+   77  ls -ld /data/support/
+   78  chmod 075 /data/support
+   79  ls -ld /data/support/
+   80  history
+   81  crontab -e -u linda 
+   82  man date
+   83  date +"%A %d-%m-%Y %H:%S"
+   84  crontab -e -u linda 
+   85  date
+   86  crontab -e -u linda 
+   87  journalctl 
+   88  crontab -e -u linda 
+   89  history
+   90  vim /etc/ssh/sshd_config
+   91  su - linda
+   92  history
+   93  cat /etc/ssh/sshd_config
+   94  vim /etc/ssh/sshd_config
+   95  man sshd_config 
+   96  vim /etc/ssh/sshd_config
+   97  vim /etc/security/limits.conf 
+   98  systemctl show sshd
+   99  man systemd.directives
+  100  man systemd.resource-control
+  101  systemctl edit sshd
+  102  systemctl cat sshd
+  103  systemctl status sshd
+  104  history
+  105  dd if=/dev/zero of=big.log bs=1M count=10
+  106  df -h
+  107  df -h | awk '$5+0 > 10 { print $1 }'
+  108  for i in $(df -h | awk '$5+0 > 10 { print $6 }'; do echo $i; done
+  109  for i in $(df -h | awk '$5+0 > 10 { print $6 }'); do echo $i; done
+  110  for i in $(df -h | awk '$5+0 > 10 { print $6 }'); do find $i -size +5M -name "*.log"; done
+  111  for i in $(df -h | awk '$5+0 > 10 { print $6 }'); do find $i -size +5M -name "*.log" -exec rm -f {} \; ; done
+  112  ls
+  113  history
+
