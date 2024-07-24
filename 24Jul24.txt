@@ -1,0 +1,190 @@
+    1  chvt 2
+    2  exit
+    3  chvt 2
+    4  exit
+    5  chvt 2
+    6  chvt 4
+    7  dnf -y install git
+    8  vim countdown
+    9  chmod +x countdown 
+   10  ./countdown 7
+   11  man find
+   12  find / -inum +1 2>/dev/null | wc -l
+   13  find / -type f -inum +1 2>/dev/null | wc -l
+   14  find / -type f -links +1 
+   15  find / -type f -links +1 | wc -l
+   16  ls -il /etc/hosts
+   17  ln /etc/hosts /etc/blah
+   18  find / -type f -links +1 | wc -l
+   19  find / -type f -links +1 -exec ls -il {} \; awk '{ print $1 }' | sort | uniq | wc -l
+   20  find / -type f -links +1 -exec ls -il {} \; | awk '{ print $1 }' | sort | uniq | wc -l
+   21  ./countdown 8
+   22  echo "password required pam_pwquality.so minlin=14 difok=3" | tee -a /etc/security/pam_qualify.conf
+   23  vim /etc/security/pam_qualify.conf 
+   24  ldd login
+   25  ldd $(which login)
+   26  man -k _pam
+   27  man -k pam
+   28  mandb
+   29  man -k pam
+   30  man pam_pwquality 
+   31  man pwquality.conf
+   32  cd /etc/pam.d/
+   33  ls
+   34  vim login
+   35  vim system-auth 
+   36  vim passwd
+   37  groupadd support; for i in linda lori anna; do useradd -G support $i; done
+   38  passwd linda
+   39  id anna
+   40  visudo
+   41  su - anna
+   42  passwd anna
+   43  ls
+   44  vim system-auth 
+   45  su - anna
+   46  cd
+   47  ./countdown 12
+   48  sudo visudo
+   49  su - anna
+   50  vim /etc/securetty
+   51  chvt 5
+   52  man pam_securetty
+   53  vim /etc/pam.d/system-auth 
+   54  chvt 5
+   55  vim /etc/pam.d/system-auth 
+   56  chvt 5
+   57  w
+   58  loginctl list-sessions
+   59  loginctl kill-session 9
+   60  loginctl kill-session 8
+   61  w
+   62  ./countdown 8
+   63  poweroff
+   64  lsblk
+   65  fdisk /dev/nvme0n2
+   66  man -k ext3
+   67  man mkfs.ext3
+   68  man mount
+   69  man mkfs.ext3
+   70  mkfs.ext3 -O journal_data /dev/nvme0n2p1
+   71  mkfs.ext3 /dev/nvme0n2p1
+   72  tune2fs --help
+   73  tune2fs -l /dev/nvme0n2p1
+   74  vim /etc/fstab
+   75  blkid
+   76  vim /etc/fstab
+   77  mount -a
+   78  mkdir /files
+   79  mount -a
+   80  ./countdown 12
+   81  man ext4
+   82  ./countdown 8
+   83  fdisk /dev/nvme0n2
+   84  vgcreate vgfiles /dev/nvme0n1p2
+   85  vgcreate vgfiles /dev/nvme0n2p2
+   86  pvs
+   87  vgs
+   88  lvcreate -n lvfiles -L 2G vgfiles
+   89  lvcreate -n lvfiles -l 100%FREE vgfiles
+   90  mkfs.ext4 /dev/vgfiles/lvfiles 
+   91  mkdir /lvfiles
+   92  vim /etc/fstab
+   93  mount -a
+   94  vim /etc/default/grub 
+   95  grub2-mkconfig -o /boot/grub2/grub.cfg
+   96  reboot
+   97  lsblk
+   98  vgs
+   99  vgextend vgfiles /dev/nvme0n2p3
+  100  vgs
+  101  lvextend -r -l +100%FREE /dev/vgfiles/lvfiles
+  102  lsblk
+  103  df -h
+  104  ./countdown 1
+  105  fdisk /dev/nvme0n2
+  106  history
+  107  crontab --help
+  108  crontab -u linda -e
+  109  systemctl status crond
+  110  date
+  111  man date
+  112  date
+  113  ls /etc/cron*/*
+  114  systemctl list-units -t timer
+  115  systemctl status crond
+  116  journalctl -u crond
+  117  crontab -u linda -e
+  118  journalctl
+  119  crontab -u linda -e
+  120  date
+  121  journalctl 
+  122  crontab -u linda -e
+  123  date
+  124  cat /tmp/lindacron.txt 
+  125  crontab -u linda -e
+  126  history
+  127  cat /tmp/lindacron.txt 
+  128  history
+  129  crontab -u linda -e
+  130  journalctl -f
+  131  crontab -u linda -e
+  132  journalctl -f
+  133  crontab -u linda -e
+  134  journalctl -f
+  135  crontab -u linda -e
+  136  journalctl -f
+  137  crontab -u linda -e
+  138  journalctl -f
+  139  cat /tmp/lindacron.txt 
+  140  crontab -u linda -e
+  141  journalctl -f
+  142  crontab -u linda -e
+  143  journalctl -f
+  144  crontab -u linda -e
+  145  journalctl -f
+  146  cat /tmp/lindacron.txt 
+  147  crontab -u linda -e
+  148  journalctl -f
+  149  crontab -u linda -e
+  150  journalctl -f
+  151  cat /tmp/lindacron.txt 
+  152  crontab -u linda -e
+  153  dnf install -y vsftpd
+  154  subscription-manager register
+  155  subscription-manager attach
+  156  dnf install -y vsftpd
+  157  vim /etc/vsftpd/vsftpd.conf 
+  158  systemctl enable --now vsftpd
+  159  dnf install -y lftp
+  160  lftp localhost
+  161  getenforce
+  162  setenforce permissive
+  163  lftp localhost
+  164  cd /var/ftp/
+  165  ls
+  166  ls -l
+  167  chmod 777 pub
+  168  cd
+  169  lftp localhost
+  170  setenforce enforcing
+  171  lftp localhost
+  172  grep AVC /var/log/audit/audit.log 
+  173  journalctl | grep sealert
+  174  sealert -l be70193c-0a6a-4fde-b3b8-4fd3a1a110a4 | less
+  175  # semanage fcontext -a -t public_content_rw_t pub
+  176  # restorecon -R -v pub
+  177  # setsebool -P allow_ftpd_anon_write 1
+  178  ls -lZ /var/ftp/
+  179  semanage fcontext -a -t public_content_rw_t "/var/ftp/pub(/.*)?"
+  180  restorecon -Rv /var/ftp/pub
+  181  cd /etc/selinux/targeted/contexts/files/
+  182  ls
+  183  cat file_contexts.local
+  184  setsebool -P allow_ftpd_anon_write 1
+  185  getenforce
+  186  lftp localhost
+  187  ausearch -i -m avc,user_avc,selinux_err,user_selinux_err -ts today
+  188  man ausearch
+  189  history
+  190  history > 24Jul24.txt
