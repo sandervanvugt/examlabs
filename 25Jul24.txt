@@ -1,0 +1,383 @@
+[linda@localhost ~]$ history
+    1  ssh-keygen
+    2  exit
+    3  podman search mariadb-105
+    4  exit
+    5  podman search mariadb-105
+    6  mkdir mysql
+    7  ls -ld mysql/
+    8  podman unshare chown 27:27 mysql
+    9  ls -ld mysql/
+   10  podman unshare ls -ld mysql/
+   11  podman run -d -v /home/linda/mysql:/var/lib/mysql:Z -e MYSQL_ROOT_PASSWORD=password -p 3306:3306 registry.redhat.io/rhel9/mariadb-105
+   12  podman login registry.redhat.io
+   13  podman run -d -v /home/linda/mysql:/var/lib/mysql:Z -e MYSQL_ROOT_PASSWORD=password -p 3306:3306 registry.redhat.io/rhel9/mariadb-105
+   14  podman ps
+   15  ls mysql/
+   16  ls -l mysql/
+   17  history
+
+    1  chvt 2
+    2  exit
+    3  chvt 2
+    4  exit
+    5  chvt 2
+    6  chvt 4
+    7  dnf -y install git
+    8  vim countdown
+    9  chmod +x countdown 
+   10  ./countdown 7
+   11  man find
+   12  find / -inum +1 2>/dev/null | wc -l
+   13  find / -type f -inum +1 2>/dev/null | wc -l
+   14  find / -type f -links +1 
+   15  find / -type f -links +1 | wc -l
+   16  ls -il /etc/hosts
+   17  ln /etc/hosts /etc/blah
+   18  find / -type f -links +1 | wc -l
+   19  find / -type f -links +1 -exec ls -il {} \; awk '{ print $1 }' | sort | uniq | wc -l
+   20  find / -type f -links +1 -exec ls -il {} \; | awk '{ print $1 }' | sort | uniq | wc -l
+   21  ./countdown 8
+   22  echo "password required pam_pwquality.so minlin=14 difok=3" | tee -a /etc/security/pam_qualify.conf
+   23  vim /etc/security/pam_qualify.conf 
+   24  ldd login
+   25  ldd $(which login)
+   26  man -k _pam
+   27  man -k pam
+   28  mandb
+   29  man -k pam
+   30  man pam_pwquality 
+   31  man pwquality.conf
+   32  cd /etc/pam.d/
+   33  ls
+   34  vim login
+   35  vim system-auth 
+   36  vim passwd
+   37  groupadd support; for i in linda lori anna; do useradd -G support $i; done
+   38  passwd linda
+   39  id anna
+   40  visudo
+   41  su - anna
+   42  passwd anna
+   43  ls
+   44  vim system-auth 
+   45  su - anna
+   46  cd
+   47  ./countdown 12
+   48  sudo visudo
+   49  su - anna
+   50  vim /etc/securetty
+   51  chvt 5
+   52  man pam_securetty
+   53  vim /etc/pam.d/system-auth 
+   54  chvt 5
+   55  vim /etc/pam.d/system-auth 
+   56  chvt 5
+   57  w
+   58  loginctl list-sessions
+   59  loginctl kill-session 9
+   60  loginctl kill-session 8
+   61  w
+   62  ./countdown 8
+   63  poweroff
+   64  lsblk
+   65  fdisk /dev/nvme0n2
+   66  man -k ext3
+   67  man mkfs.ext3
+   68  man mount
+   69  man mkfs.ext3
+   70  mkfs.ext3 -O journal_data /dev/nvme0n2p1
+   71  mkfs.ext3 /dev/nvme0n2p1
+   72  tune2fs --help
+   73  tune2fs -l /dev/nvme0n2p1
+   74  vim /etc/fstab
+   75  blkid
+   76  vim /etc/fstab
+   77  mount -a
+   78  mkdir /files
+   79  mount -a
+   80  ./countdown 12
+   81  man ext4
+   82  ./countdown 8
+   83  fdisk /dev/nvme0n2
+   84  vgcreate vgfiles /dev/nvme0n1p2
+   85  vgcreate vgfiles /dev/nvme0n2p2
+   86  pvs
+   87  vgs
+   88  lvcreate -n lvfiles -L 2G vgfiles
+   89  lvcreate -n lvfiles -l 100%FREE vgfiles
+   90  mkfs.ext4 /dev/vgfiles/lvfiles 
+   91  mkdir /lvfiles
+   92  vim /etc/fstab
+   93  mount -a
+   94  vim /etc/default/grub 
+   95  grub2-mkconfig -o /boot/grub2/grub.cfg
+   96  reboot
+   97  lsblk
+   98  vgs
+   99  vgextend vgfiles /dev/nvme0n2p3
+  100  vgs
+  101  lvextend -r -l +100%FREE /dev/vgfiles/lvfiles
+  102  lsblk
+  103  df -h
+  104  ./countdown 1
+  105  fdisk /dev/nvme0n2
+  106  history
+  107  crontab --help
+  108  crontab -u linda -e
+  109  systemctl status crond
+  110  date
+  111  man date
+  112  date
+  113  ls /etc/cron*/*
+  114  systemctl list-units -t timer
+  115  systemctl status crond
+  116  journalctl -u crond
+  117  crontab -u linda -e
+  118  journalctl
+  119  crontab -u linda -e
+  120  date
+  121  journalctl 
+  122  crontab -u linda -e
+  123  date
+  124  cat /tmp/lindacron.txt 
+  125  crontab -u linda -e
+  126  history
+  127  cat /tmp/lindacron.txt 
+  128  history
+  129  crontab -u linda -e
+  130  journalctl -f
+  131  crontab -u linda -e
+  132  journalctl -f
+  133  crontab -u linda -e
+  134  journalctl -f
+  135  crontab -u linda -e
+  136  journalctl -f
+  137  crontab -u linda -e
+  138  journalctl -f
+  139  cat /tmp/lindacron.txt 
+  140  crontab -u linda -e
+  141  journalctl -f
+  142  crontab -u linda -e
+  143  journalctl -f
+  144  crontab -u linda -e
+  145  journalctl -f
+  146  cat /tmp/lindacron.txt 
+  147  crontab -u linda -e
+  148  journalctl -f
+  149  crontab -u linda -e
+  150  journalctl -f
+  151  cat /tmp/lindacron.txt 
+  152  crontab -u linda -e
+  153  dnf install -y vsftpd
+  154  subscription-manager register
+  155  subscription-manager attach
+  156  dnf install -y vsftpd
+  157  vim /etc/vsftpd/vsftpd.conf 
+  158  systemctl enable --now vsftpd
+  159  dnf install -y lftp
+  160  lftp localhost
+  161  getenforce
+  162  setenforce permissive
+  163  lftp localhost
+  164  cd /var/ftp/
+  165  ls
+  166  ls -l
+  167  chmod 777 pub
+  168  cd
+  169  lftp localhost
+  170  setenforce enforcing
+  171  lftp localhost
+  172  grep AVC /var/log/audit/audit.log 
+  173  journalctl | grep sealert
+  174  sealert -l be70193c-0a6a-4fde-b3b8-4fd3a1a110a4 | less
+  175  # semanage fcontext -a -t public_content_rw_t pub
+  176  # restorecon -R -v pub
+  177  # setsebool -P allow_ftpd_anon_write 1
+  178  ls -lZ /var/ftp/
+  179  semanage fcontext -a -t public_content_rw_t "/var/ftp/pub(/.*)?"
+  180  restorecon -Rv /var/ftp/pub
+  181  cd /etc/selinux/targeted/contexts/files/
+  182  ls
+  183  cat file_contexts.local
+  184  setsebool -P allow_ftpd_anon_write 1
+  185  getenforce
+  186  lftp localhost
+  187  ausearch -i -m avc,user_avc,selinux_err,user_selinux_err -ts today
+  188  man ausearch
+  189  history
+  190  history > 24Jul24.txt
+  191  ip a
+  192  cp 24Jul24.txt /tmp/
+  193  cat /tmp/lindacron.txt 
+  194  crontab -e -u linda
+  195  cat /tmp/lindacron.txt 
+  196  crontab -e -u linda
+  197  dd if=/dev/zero of=big.log bs=1M count=10
+  198  #if [[ $(df -h --output=target,pcent | cut -f2 ) -gt 10 ]]; then find / -xdev -type f -name "*.log" -size +5M -delete 2>/dev/null; fi
+  199  df -h
+  200  man find
+  201  find / -xdev -type f -name "*.log" -size +5M
+  202  dd if=/dev/zero of=/boot/test.log bs=1M count=10
+  203  dd if=/dev/zero of=/files/test.log bs=1M count=10
+  204  find / -xdev -type f -name "*.log" -size +5M
+  205  find / -xdev -type f -name "*.log" -size +5M -delete
+  206  find / -xdev -type f -name "*.log" -size +5M -exec rm -f {} \;
+  207  find /boot -xdev -type f -name "*.log" -size +5M
+  208  find /boot -xdev -type f -name "*.log" -size +5M -delete
+  209  find /boot -xdev -type f -name "*.log" -size +5M 
+  210  find / -name "*.log" -size +5M
+  211  history
+  212  vim /etc/security/limits.conf 
+  213  systemctl show sshd
+  214  systemctl edit sshd
+  215  man systemd.directives
+  216  man systemd.resource-control
+  217  systemctl cat sshd
+  218  man systemd.resource-control
+  219  systemctl status sshd
+  220  systemctl edit sshd.service
+  221  systemctl status sshd
+  222  history
+  223  systemctl cat sshd
+  224  su - lisa
+  225  useradd lisa
+  226  su - lisa
+  227  history
+  228  find / -name "limits.conf"
+  229  vim /etc/security/limits.conf 
+  230  su - lisa
+  231  vim /etc/security/limits.conf 
+  232  history
+  233  su - linda
+  234  vim /etc/ssh/sshd_config
+  235  passwd anna
+  236  passwd lisa
+  237  passwd linda
+  238  vim /etc/ssh/sshd_config
+  239  systemctl restart sshd
+  240  login lisa@localhost
+  241  historyu
+  242  history
+  243  ssh lisa@localhost
+  244  ssh linda@localhost
+  245  ssh anna@localhost
+  246  history
+  247  systemctl enable --now tuned
+  248  tuned-adm list
+  249  tuned-adm recommend
+  250  history
+  251  dnf install nfs-utils -y
+  252  ip a
+  253  vim /etc/exports
+  254  systemctl enable --now nfs-server
+  255  showmount -e localhost
+  256  mkdir /nfs
+  257  mount 192.168.29.166:/var /nfs
+  258  ls /nfs
+  259  cd /nfs
+  260  touch hh
+  261  cd 
+  262  systemctl show-unit-files -t mount
+  263  systemctl list-unit-files -t mount
+  264  cp /usr/lib/systemd/system/tmp.mount /etc/systemd/system/nfs.mount
+  265  vim /etc/systemd/system/nfs.mount
+  266  umount /nfs
+  267  systemctl enable --now nfs.mount
+  268  journalctl -xe
+  269  vim /etc/systemd/system/nfs.mount
+  270  rm /etc/systemd/system/nfs.mount 
+  271  vim /etc/systemd/system/nfs.mount
+  272  rm /etc/systemd/system/nfs.mount 
+  273  vim /etc/fstab
+  274  systemctl daemon-reload
+  275  cd /run/systemd/generator/
+  276  ls
+  277  cat nfs.mounts
+  278  cat nfs.mount
+  279  mount -a
+  280  ip a
+  281  vim /etc/fstab
+  282  mount -a
+  283  mount
+  284  cp nfs.mount /etc/systemd/system/
+  285  vim /etc/systemd/system/nfs.mount 
+  286  umount /nfs
+  287  systemctl enable --now nfs.mount
+  288  ls
+  289  cd 
+  290  history | grep mount
+  291  systemctl daemon-reload
+  292  systemctl start nfs.mount
+  293  journaltl -xe
+  294  journalctl -xe
+  295  systemctl show nfs.mount
+  296  systemctl status nfs.mount
+  297  vim /etc/systemd/system/nfs.mount 
+  298  systemctl start nfs.mount
+  299  vim /etc/fstab
+  300  vim /etc/systemd/system/nfs.mount 
+  301  systemctl daemon-reload
+  302  systemctl start nfs.mount
+  303  vim /etc/systemd/system/nfs.mount 
+  304  history
+  305  hwclock
+  306  date
+  307  hwclock --help
+  308  vim /etc/chrony.conf 
+  309  history
+  310  systemd-run --help
+  311  systemd-run sleep infinity
+  312  systemctl edit run-r81f6183e6b184c33bd8729b457dc843f.service 
+  313  vim /etc/systemd/system/sleep.service
+  314  systemctl daemon-reload
+  315  systemctl status sleep.service 
+  316  systemctl enable --now sleep.service
+  317  systemctl status sleep.service 
+  318  kill -9 122732
+  319  systemctl status sleep.service 
+  320  history
+  321  cat /etc/systemd/system/sleep.service 
+  322  ls
+  323  git clone https://github.com/sandervanvugt/examlabs
+  324  cd examlabs/
+  325  ls
+  326  cd docker/
+  327  ls
+  328  history
+  329  cd 
+  330  cd examlabs/
+  331  git pull
+  332  ls
+  333  cd docker/
+  334  ls
+  335  vim Dockerfile 
+  336  setenforce permissive
+  337  podman build examlab .
+  338  podman build -t examlab .
+  339  cat Dockerfile 
+  340  podman run -v /tmp:/tmp --memory 128m -d examlab
+  341  ls -l /tmp/FromTheContainer 
+  342  podman run --help
+  343  cd
+  344  setenforce enforcing
+  345  history
+  346  su -
+  347  su - linda
+  348  vim /etc/ssh/sshd_config
+  349  systemctl restart sshd
+  350  ssh linda@localhost
+  351  vim 25Jul24.txt
+  352  git clone https://github.com/sandervanvugt/rhcsa-exam
+  353  git clone https://github.com/sandervanvugt/rhcsa-exams
+  354  git clone https://github.com/sandervanvugt/rhcsa-labs
+  355  cd rhcsa-labs/
+  356  ls
+  357  ./lab132-grade.sh 
+  358  ls
+  359  ./exam-grade.sh 
+  360  cd ../
+  361  ls
+  362  cat 25Jul24.txt 
+  363  ssh linda@localhost
+  364  history >> 25Jul24.txt 
